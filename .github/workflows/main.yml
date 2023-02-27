@@ -2,7 +2,7 @@ name: CGGG#6
 on: [push]
 jobs:
   test:
-    runs-on:
+    runs-on: ubuntu-latest
     steps:
       - name: repository checkout
         uses: actions/checkout@v3
