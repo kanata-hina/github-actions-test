@@ -1,0 +1,20 @@
+name: CGGG#6
+on: # ワークフロー発火イベント
+jobs:
+  test: # job名
+    runs-on: # 実行環境
+    steps:
+      - name: repository checkout
+        # ソースコードの取得
+        uses: actions/checkout@v3
+
+      - name: Set up python
+        # 言語環境設定
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.6.8'
+
+      - name: Test
+        # テストの実施
+        run: python -m unittest add_test
+        working-directory: ./python
