@@ -5,5 +5,8 @@ class SampleTest(unittest.TestCase):
     def test_add(self):
         self.assertEqual(add.add(1, 2), 3)
 
+    def test_add_fail(self):
+        self.assertEqual(add.add(1, 5), 4)
+
 if __name__ == "__main__":
     unittest.main()
