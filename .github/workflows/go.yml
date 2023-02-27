@@ -3,11 +3,12 @@
 
 name: Go
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "*" ]
+# on:
+#   push:
+#     branches: [ "main" ]
+#   pull_request:
+on: [pull_request]
+
 
 jobs:
 
