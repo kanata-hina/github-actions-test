@@ -1,8 +1,8 @@
 name: CGGG#6
-on: # ワークフロー発火イベント
+on:
 jobs:
-  test: # job名
-    runs-on: # 実行環境
+  test:
+    runs-on:
     steps:
       - name: repository checkout
         # ソースコードの取得
