@@ -1,0 +1,26 @@
+name: nodejs-cache
+on: [push]
+jobs:
+  cache-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: repository checkout
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.14
+      
+      - name: restore cache
+        uses: actions/cache@v3
+        with:
+          path: ./nodejs/node_modules
+          key: nodejs-${{ hashFiles('./nodejs/package-lock.json') }}
+      
+      - name: resolve dependencies
+        run: npm install
+        working-directory: ./nodejs
+      
+      - name: Test
+        run: npm test run
+        working-directory: ./nodejs
