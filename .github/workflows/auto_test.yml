@@ -5,8 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: repository checkout
-        - uses: actions/checkout@v3
+        uses: actions/checkout@v3
       - name: Set up python or node.js or go
-        - uses: actions/setup-python@v3
+        uses: actions/setup-python@v3
       - name: Test
-        - run: python/python add_test.py
+        run: python/python add_test.py
